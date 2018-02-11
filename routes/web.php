@@ -48,6 +48,19 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
             'uses' => 'UserController@getUserChange',
             'as' => 'changeuser',
     ]);
+
+        Route::get('uploadproduct', [
+            'uses' => 'ProductController@uploadProduct',
+            'as' => 'uploadproduct',
+        ]);
+
+        Route::post('uploadproduct', [
+            'uses' => 'productController@uploadProductPost',
+            'as' => 'uploadproduct',
+        ]);
+
+
+
     });  // END GROUP
 
         Route::get('mycart', [
@@ -69,6 +82,8 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
             'uses' => 'UserController@postSignIn',
             'as' => 'signin'
         ]);
+
+ 
         
         Route::get('logout',[
             'uses' => 'UserController@getlogout',

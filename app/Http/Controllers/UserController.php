@@ -106,6 +106,8 @@ class UserController extends Controller
     {
         return view('mycart');
     }
+
+
     
 }
 
