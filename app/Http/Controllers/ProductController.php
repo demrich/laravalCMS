@@ -20,19 +20,36 @@ class ProductController extends Controller
         return view('uploadproduct');
     }
 
-    public function uploadProductPost() 
+    public function uploadProductPost(Request $request) 
     {
         request()->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title' => 'required', 
+            'price' => 'required',           
         ]);
 
-
         $productImage = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $productImage);
+        $productTitle = $request['title'];
+        $productDescription = $request['description'];
+        $productPrice = $request['price'];
+
+        request()->image->move(public_path('storage/product_images'), $productImage);
+
+
+        /* Assigns to Database */  
+        $product = new Product();
+        $product->title = $productTitle;
+        $product->description = $productDescription;
+        $product->price = $productPrice;
+        $product->created_at = time();
+        $product->updated_at = time();
+        $product->imagePath = $productImage;
+        $product->save();
 
         return back()
-            ->with('success','You have successfully upload image.')
+            ->with('success','You have successfully uploaded an image.')
             ->with('image',$productImage);
+
 
 
     }

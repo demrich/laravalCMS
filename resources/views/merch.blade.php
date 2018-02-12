@@ -22,7 +22,7 @@ Merch
     @foreach($productChunk as $product)
         <div class="col-md-4">
             <div class="thumbnail">
-                <img src="{{ $product->imagePath }}" alt="..." class="img-responsive">
+                <img src="/storage/product_images/{{ $product->imagePath }}" alt="..." class="img-responsive">
                 <div class="caption">
                     <h3>{{ $product->title }}</h3>
                     <p class="description">{{ $product->description }}</p>
