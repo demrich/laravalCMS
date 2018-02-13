@@ -96,6 +96,18 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
             'uses' => 'UserController@getDashboard',
             'as' => 'dashboard',
             ]);
+
+        Route::get('beatdonation', [
+            'uses' => 'MusicController@beatDonation',
+            'as' => 'beatdonation',
+            ]);
+
+        Route::post('beatdonation', [
+            'uses' => 'MusicController@uploadBeatDonation',
+            'as' => 'beatdonation',
+        ]);            
+    
+
     }); //END GROUP
 
 }); // END GROUP

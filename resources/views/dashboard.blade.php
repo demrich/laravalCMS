@@ -10,5 +10,7 @@ Profile
 <a href="https://youtu.be/atWUeGBIAAM?t=7m" target="_blank">
 <img src="/img/eye.gif" width="300">
 </a>
+<br>
+<a href="{{ route('beatdonation') }}">Beat Donation</a>
 
 @endsection

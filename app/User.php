@@ -49,9 +49,5 @@ class User extends Model implements Authenticatable
 
     }
 
-    public function sendVerificationEmail()
-    {
-        $user->notify(new VerifyEmail($this));
 
-    }
 }
