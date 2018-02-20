@@ -1,4 +1,5 @@
 <?php
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,21 @@ Route::get('merch', [
 Route::post('/', [
     'uses' => 'UserController@getWelcome',
     'as' => 'welcome'
+]);
+
+Route::get('cart', [
+    'uses'=> 'CartController@mycart',
+    'as' => 'cart'
+]);
+
+
+Route::get('empty', function() {
+    Cart::destroy();
+});
+
+Route::post('cart', [
+    'uses'=> 'CartController@store',
+    'as' => 'cart.store'
 ]);
 
 Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
@@ -63,10 +79,7 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
 
     });  // END GROUP
 
-        Route::get('mycart', [
-            'uses'=> 'UserController@myCart',
-            'as' => 'mycart'
-        ]);
+
 
         Route::get('login',[
             'uses' => 'UserController@getlogin',
@@ -111,3 +124,4 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
     }); //END GROUP
 
 }); // END GROUP
+

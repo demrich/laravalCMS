@@ -12,34 +12,34 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
         $product = new \App\Product([
-            'imagePath' => 'http://via.placeholder.com/250x300',
-            'title' => 'Example Text',
+            'imagePath' => '1518388381.gif',
+            'name' => 'Example Text',
             'description' => 'example description. please fill a real description later',
-            'price' => '00.00'
+            'price' => '9.99'
         ]);
 
         $product->save();
         $product = new \App\Product([
-            'imagePath' => 'http://via.placeholder.com/250x300',
-            'title' => 'Example Text',
+            'imagePath' => '1518388381.gif',
+            'name' => 'Example Text',
             'description' => 'example description. please fill a real description later',
-            'price' => '00.00'
+            'price' => '9.99'
         ]);
 
         $product->save();
         $product = new \App\Product([
-            'imagePath' => 'http://via.placeholder.com/250x300',
-            'title' => 'Example Text',
+            'imagePath' => '1518388381.gif',
+            'name' => 'Example Text',
             'description' => 'example description. please fill a real description later',
-            'price' => '00.00'
+            'price' => '9.99'
         ]);
 
         $product->save();
         $product = new \App\Product([
-            'imagePath' => 'http://via.placeholder.com/250x300',
-            'title' => 'Example Text',
+            'imagePath' => '1518388381.gif',
+            'name' => 'Example Text',
             'description' => 'example description. please fill a real description later',
-            'price' => '00.00'
+            'price' => '9.99'
         ]);
 
         $product->save();

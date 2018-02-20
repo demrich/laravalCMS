@@ -16,7 +16,7 @@ Product Upload
 
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <strong>Whoops!</strong> Looks like there's some problems.
+                <strong>Whoops!</strong> Looks like there is some problems.
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -30,8 +30,8 @@ Product Upload
 
         <div class="row">
             <div class="col-md-12">
-                <h3>Title: </h3>
-                  {!! Form::text('title'); !!}  
+                <h3>Name: </h3>
+                  {!! Form::text('name'); !!}  
             </div>
         </div>
             <div class="row">

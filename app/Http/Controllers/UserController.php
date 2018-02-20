@@ -70,7 +70,7 @@ class UserController extends Controller
         $user->email = $email;
         $user->first_name = $first_name;
         $user->password = $password;
-        $user->token = $token;
+        $user->remember_token = $token;
         $user->save();
         $user->roles()->attach(Role::where('name', 'User')->first());
         Auth::login($user);
@@ -102,10 +102,7 @@ class UserController extends Controller
     }
 
    
-    public function myCart() 
-    {
-        return view('mycart');
-    }
+
 
 
     

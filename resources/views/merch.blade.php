@@ -24,11 +24,21 @@ Merch
             <div class="thumbnail">
                 <img src="/storage/product_images/{{ $product->imagePath }}" alt="..." class="img-responsive">
                 <div class="caption">
-                    <h3>{{ $product->title }}</h3>
+                    <h3>{{ $product->name }}</h3>
                     <p class="description">{{ $product->description }}</p>
                     <div class="clearfix">
-                        <div class="pull-left price">${{ $product->price }}</div>
-                        <a href="#" class="btn btn-success pull-right" role="button">Add to Cart</a>
+                        <div class="pull-left price">{{ $product->price }}</div>
+
+                        <form action="{{ route('cart.store') }}" method="POST">
+
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <input type="hidden" name="name" value="{{ $product->name }}">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <button type="submit" class="btn btn-success pull-right">Add to Cart</button>
+                        </form>
+
+
                     </div>
                 </div>
             </div>

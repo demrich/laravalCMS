@@ -24,12 +24,12 @@ class ProductController extends Controller
     {
         request()->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title' => 'required', 
+            'name' => 'required', 
             'price' => 'required',           
         ]);
 
         $productImage = time().'.'.request()->image->getClientOriginalExtension();
-        $productTitle = $request['title'];
+        $productName = $request['name'];
         $productDescription = $request['description'];
         $productPrice = $request['price'];
 
@@ -38,7 +38,7 @@ class ProductController extends Controller
 
         /* Assigns to Database */  
         $product = new Product();
-        $product->title = $productTitle;
+        $product->name = $productName;
         $product->description = $productDescription;
         $product->price = $productPrice;
         $product->created_at = time();

@@ -34,27 +34,25 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-
-
            @if (Auth::guest())
-           <li><a href="{{ route('mycart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
+           <li><a href="{{ route('cart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
            <li><a href="{{ route('login') }}" ><i class="fa fa-power-off" aria-hidden="true"></i> Login </a></li>
 
            @elseif (Auth::user()->hasRole('admin'))
            <li><a href="{{ route('admin') }}"><i class="fa fa-diamond" aria-hidden="true"></i> Admin <span class="sr-only">(current)</span></a></li>
            <li><a href="{{ route('dashboard') }}"><i class="fa fa-user" aria-hidden="true"></i> Profile <span class="sr-only">(current)</span></a></li>
-           <li><a href="{{ route('mycart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
+           <li><a href="{{ route('cart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
            <li><a href="{{ route('logout') }}" ><i class="fa fa-power-off" aria-hidden="true"></i> Logout </a></li>
 
            @elseif (Auth::user()->hasRole('author'))
            <li><a href="{{ route('admin') }}"><i class="fa fa-diamond" aria-hidden="true"></i> Blog <span class="sr-only">(current)</span></a></li>
            <li><a href="{{ route('dashboard') }}"><i class="fa fa-user" aria-hidden="true"></i> Profile <span class="sr-only">(current)</span></a></li>
-           <li><a href="{{ route('mycart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
+           <li><a href="{{ route('cart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
            <li><a href="{{ route('logout') }}" ><i class="fa fa-power-off" aria-hidden="true"></i> Logout </a></li>
 
            @else
            <li><a href="{{ route('dashboard') }}"><i class="fa fa-user" aria-hidden="true"></i> Profile <span class="sr-only">(current)</span></a></li>
-           <li><a href="{{ route('mycart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
+           <li><a href="{{ route('cart') }}" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>
            <li><a href="{{ route('logout') }}" ><i class="fa fa-power-off" aria-hidden="true"></i> Logout </a></li>
 
            @endif
