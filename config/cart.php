@@ -45,6 +45,6 @@ return [
     'format' => [
         'decimals' => 2,
         'decimal_point' => '.',
-        'thousand_seperator' => ','
+        'thousand_seperator' => ''
     ],
 ];

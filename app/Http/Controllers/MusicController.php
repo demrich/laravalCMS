@@ -24,7 +24,7 @@ class MusicController extends Controller
         $beatTitle = $request['title'];
         $beatArtist = $request['artist'];
         $beatAlbum = $request['album'];
-        $beatPath = time().'.'.request()->beat->getClientOriginalExtension();
+        $beatPath = request()->beat->getClientOriginalName();
 
         request()->beat->move(public_path('storage/beat_donations'), $beatPath);
 
@@ -34,7 +34,7 @@ class MusicController extends Controller
         $beat->beatPath = $beatPath;
         $beat->title = $beatTitle;
         $beat->artist = $beatArtist;
-        $beat->album = $beatAlbum;
+        $beat->album = 'Donation';
         $beat->created_at = time();
         $beat->updated_at = time();
         $beat->save();

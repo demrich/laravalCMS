@@ -35,15 +35,15 @@ Route::get('cart', [
     'as' => 'cart'
 ]);
 
-
-Route::get('empty', function() {
-    Cart::destroy();
-});
-
 Route::post('cart', [
     'uses'=> 'CartController@store',
     'as' => 'cart.store'
 ]);
+
+Route::delete('/cart/{product}','CartController@destroy')->name('cart.remove');
+Route::post('/cart/wishList/{product}','CartController@wishList')->name('cart.wishList');
+Route::delete('/cart/wishList/{product}','CartController@removeWish')->name('wishList.remove');
+
 
 Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
 
