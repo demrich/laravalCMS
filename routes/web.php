@@ -40,6 +40,11 @@ Route::post('cart', [
     'as' => 'cart.store'
 ]);
 
+Route::get('empty', function(){
+    Cart::destroy();
+}
+);
+
 Route::delete('/cart/{product}','CartController@destroy')->name('cart.remove');
 Route::post('/cart/wishList/{product}','CartController@wishList')->name('cart.wishList');
 Route::delete('/cart/wishList/{product}','CartController@removeWish')->name('wishList.remove');

@@ -42,8 +42,9 @@ class CartController extends Controller
 
     public function destroy($id)
     {
-
+        Cart::remove($id);
         Cart::instance('shopping')->remove($id);
+
         return back()->with('success_message', 'Item has been removed!');
 
 

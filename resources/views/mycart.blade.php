@@ -27,7 +27,7 @@ Cart
 
 <div class="container">
 @if(Cart::count() > 0)
-       <h2> You have {{ Cart::count() }} Items</h2>
+       <h2> You have {{ Cart::instance('shopping')->count() }} Items</h2>
 	<div class="row">
 		<div class="col-xs-8">
 			<div class="panel panel-info">
@@ -114,6 +114,14 @@ Cart
 				</div>
 				
 			<div style="position:relative;display:block;float:right">
+			 <form action="{{ route('cart.store') }}" method="POST">
+
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $heart->id }}">
+                            <input type="hidden" name="name" value="{{ $heart->name }}">
+                            <input type="hidden" name="price" value="{{ $heart->price }}">
+                            <button type="submit"><i class="fa fa-shopping-cart"></i></button>
+            </form>
 						<form action="{{ route('wishList.remove', $heart->rowId) }}" method="POST">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
