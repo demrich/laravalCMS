@@ -14,6 +14,13 @@ class CartController extends Controller
         return view('mycart');
     }
 
+     /*
+     *
+     * Add item to shopping cart
+     * 
+     * 
+     */
+
     public function store(Request $request)
     {
       $duplicates = Cart::search(function ($cartItem, $rowId) use($request) {
@@ -40,6 +47,13 @@ class CartController extends Controller
 
     }
 
+     /*
+     *
+     * Remove item from cart
+     * 
+     * 
+     */
+
     public function destroy($id)
     {
         Cart::remove($id);
@@ -49,35 +63,5 @@ class CartController extends Controller
 
 
     }
-
-    public function removeWish($id)
-    {
-        Cart::instance('wishList')->remove($id);
-        return back()->with('success_message', 'Item has been removed from wishlist!');
-
-
-    }
-
-    /*
-     *
-     * Switch Item to Wishlist
-     * 
-     * 
-     */
-    
-    public function wishList(Request $request, $id)
-    {
-        $heart = Cart:: get($id);
-     
-        Cart::remove($id);
-        Cart::instance('shopping')->remove($id);
-
-        Cart::instance('wishList')->add($heart->id, $heart->name, 1, $heart->price)
-        ->associate('App\Product');
-        
-        return redirect()->route('cart')->with('success_message','Item added to wishlist!');
-    }
-
-    
 
 }

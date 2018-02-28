@@ -114,7 +114,7 @@ Cart
 				</div>
 				
 			<div style="position:relative;display:block;float:right">
-			 <form action="{{ route('cart.store') }}" method="POST">
+			 <form action="{{ route('wishlist.cart') }}" method="POST">
 
                             {{ csrf_field() }}
                             <input type="hidden" name="id" value="{{ $heart->id }}">
