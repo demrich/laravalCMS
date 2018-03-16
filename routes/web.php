@@ -45,6 +45,8 @@ Route::get('empty', function(){
 });
 
 Route::delete('/cart/{product}','CartController@destroy')->name('cart.remove');
+Route::patch('/cart/{product}','CartController@update')->name('cart.update');
+
 Route::post('/cart/wishList/{product}','WishlistController@wishList')->name('cart.wishList');
 Route::post('/wishlist/cart','WishlistController@store')->name('wishlist.cart');
 //Route::delete('/cart/wishList/{product}','CartController@removeWish')->name('wishList.remove');
@@ -87,7 +89,7 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
     });  // END GROUP
 
 
-
+//User Group
         Route::get('login',[
             'uses' => 'UserController@getlogin',
             'as' => 'login'
@@ -109,6 +111,13 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
             'uses' => 'UserController@getlogout',
             'as' => 'logout'
         ]);
+
+        
+        Route::get('checkout', [
+            'uses' => 'CheckoutController@index',
+            'as' => 'checkout'
+        ]);
+        
         
     Route::group(['middleware' => 'auth'], function() { // BEGIN GROUP
 
