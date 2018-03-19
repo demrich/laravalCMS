@@ -15,8 +15,30 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('test', {
+    template: '<h1>HI I AM {{ name }} <button v-on:click="changeName"></button></h1>',
+    data: function () {
+      return {
+        name: 'YOSHI'
+      }
+    },
+    methods: {
+        changeName: function () {
+            this.name = 'MARIO' 
+
+        }
+    }
+  })
 
 const app = new Vue({
-    el: '#app'
-});
+    el: '#app',
+});  
+
+const app2 = new Vue({
+    el: '#app2',
+}); 
+
+
+
+
+

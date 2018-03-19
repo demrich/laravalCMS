@@ -24,14 +24,11 @@
                 @yield('content')
             </div>  
 
-<!-- Jquery -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>  
 
 <script src="https://use.fontawesome.com/df09a2f94d.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 @yield('extra-content-bottom')
     </body>
