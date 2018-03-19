@@ -8,6 +8,12 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css' 
+Vue.use(Vuetify)
+
+import 'babel-polyfill'
+new Vue()
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,7 +22,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('test', {
-    template: '<h1>HI I AM {{ name }} <button v-on:click="changeName"></button></h1>',
+    template: '<h1>HI I AM {{ name }} <button v-on:click="changeName">Click Me</button></h1>',
     data: function () {
       return {
         name: 'YOSHI'
