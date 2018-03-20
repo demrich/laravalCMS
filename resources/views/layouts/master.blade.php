@@ -8,7 +8,6 @@
 
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
 <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
 <link rel="stylesheet" href="{{ URL::to('css/app.css') }}">
@@ -27,7 +26,6 @@
 
 
 <script src="https://use.fontawesome.com/df09a2f94d.js"></script>
-<script src="{{ asset('js/app.js') }}"></script>
 
 
 @yield('extra-content-bottom')

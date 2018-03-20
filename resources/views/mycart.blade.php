@@ -154,6 +154,7 @@ Cart
 		
 		@section('extra-content-bottom')
 		<script src="{{ asset('js/app.js') }}"></script>
+
 		<script>
 		const className= document.querySelectorAll('.quantity');
 

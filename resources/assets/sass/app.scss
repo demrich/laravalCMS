@@ -7,3 +7,10 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+@import '~vuetify/dist/vuetify.min.css';
+
+.btn {
+    padding:0;
+}
