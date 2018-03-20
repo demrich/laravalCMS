@@ -107,8 +107,8 @@ Cart
 							
 							<div class="col-xs-3">
 							<a href="{{ route('checkout') }}">
-								<button  type="button" class="btn btn-success btn-block">
-									Checkout!
+								<button type="button" class="btn btn-success">
+									Checkout
 								</button>
 							</a>
 							</div>

@@ -8356,6 +8356,21 @@ button.close {
 }
 
 .btn {
-  padding: 0;
+  padding: 0 10px;
+}
+
+input[type=text] {
+  margin-right: 10px;
+  border: 1px solid grey;
+}
+
+input[type=submit] {
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+
+input[type=submit]:hover {
+  background: grey;
+  color: white;
 }
 

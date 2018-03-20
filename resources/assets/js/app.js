@@ -12,7 +12,6 @@ import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 
 import VueLocalStorage from 'vue-localstorage'
-Vue.use(VueLocalStorage);
 
 
 import 'babel-polyfill'
@@ -26,6 +25,7 @@ new Vue()
 
 
 
+Vue.use(VueLocalStorage);
 
 
 

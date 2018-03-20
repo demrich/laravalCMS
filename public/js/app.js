@@ -992,7 +992,6 @@ window.Vue = __webpack_require__(35);
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuetify___default.a);
 
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_localstorage___default.a);
 
 
 new Vue();
@@ -1002,6 +1001,8 @@ new Vue();
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_localstorage___default.a);
 
 /***/ }),
 /* 11 */
