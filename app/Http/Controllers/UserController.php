@@ -70,6 +70,7 @@ class UserController extends Controller
         $user->email = $email;
         $user->first_name = $first_name;
         $user->password = $password;
+        $user->profile_pic= 'default.svg';
         $user->remember_token = $token;
         $user->save();
         $user->roles()->attach(Role::where('name', 'User')->first());
@@ -89,6 +90,29 @@ class UserController extends Controller
             return redirect()->route('dashboard');       
         }
     return redirect()->back();
+    }
+
+    public function uploadImage()
+    {
+        return view('dashboard');
+    }
+
+    public function uploadImagePost(Request $request)
+    {
+        $user = Auth::user();
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'          
+        ]);
+
+        $profileImage = 'user_'.time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('storage/profile/profile-pic'), $profileImage);
+
+     
+            $user->profile_pic = $profileImage;
+
+        $user->save();
+        return back()
+        ->with('success','Updated Profile Pic!');
     }
 
 

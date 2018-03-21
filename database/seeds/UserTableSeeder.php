@@ -21,6 +21,7 @@ class UserTableSeeder extends Seeder
         $admin->first_name = 'Dave';
         $admin->email = 'demrich@me.com';
         $admin->password = bcrypt('pass');
+        $admin->profile_pic = 'default.svg';
         $admin->save();
         $admin->roles()->attach($role_admin);
 
@@ -28,6 +29,7 @@ class UserTableSeeder extends Seeder
         $author->first_name = 'auth';
         $author->email = 'auth@me.com';
         $author->password = bcrypt('pass');
+        $author->profile_pic = 'default.svg';
         $author->save();
         $author->roles()->attach($role_author);
 
@@ -35,6 +37,7 @@ class UserTableSeeder extends Seeder
         $user->first_name = 'normie';
         $user->email = 'normie@me.com';
         $user->password = bcrypt('pass');
+        $user->profile_pic = 'default.svg';
         $user->save();
         $user->roles()->attach($role_user);
 

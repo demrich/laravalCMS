@@ -39,7 +39,7 @@ class User extends Model implements Authenticatable
     }
 
     protected $fillable = [
-        'first_name','email','password','token'
+        'first_name','email','password', 'profile_pic','token'
     ];
 
     public function verified()

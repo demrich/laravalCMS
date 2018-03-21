@@ -7,9 +7,17 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
-
 @import '~vuetify/dist/vuetify.min.css';
+
+h1{
+font-weight:1000;
+}
+
+li {
+    list-style-type: none;
+    font-size: 18px
+}
+
 
 .btn {
     padding:0 10px;
@@ -17,6 +25,7 @@
 
 input[type=text] {
     margin-right:10px;
+    margin-bottom:20px;
     border: 1px solid grey;
 
 }

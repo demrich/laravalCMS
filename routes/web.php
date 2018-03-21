@@ -122,6 +122,16 @@ Route::group(['prefix' => 'user'], function() {  // BEGIN GROUP
             'uses' => 'CheckoutController@index',
             'as' => 'checkout'
         ]);
+
+        Route::get('uploadprofilepic', [
+            'uses' => 'UserController@uploadImage',
+            'as' => 'uploadprofilepic',
+        ]);
+
+        Route::post('uploadprofilepic', [
+            'uses' => 'UserController@uploadImagePost',
+            'as' => 'uploadprofilepic',
+        ]);
         
         
     Route::group(['middleware' => 'auth'], function() { // BEGIN GROUP

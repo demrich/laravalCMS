@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('password');
             $table->rememberToken();
+            $table->string('profile_pic');
+
         });
     }
 
